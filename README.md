@@ -1,11 +1,9 @@
 
-# 🧠 English to Italian Translation (Seq2Seq with Luong Attention)
+# English to Italian Translation (Seq2Seq with Luong Attention)
 
 This repository contains a PyTorch implementation of a **Sequence-to-Sequence model** for translating English sentences into Italian. The model uses **Luong Attention**, **beam search decoding**, and is evaluated using the **BLEU score**.
 
----
-
-## 📂 Project Structure
+## Project Structure
 
 ```
 .
@@ -16,9 +14,7 @@ This repository contains a PyTorch implementation of a **Sequence-to-Sequence mo
 ├── README.md                # This file
 ```
 
----
-
-## 🧪 Model Summary
+## Model Summary
 
 - **Architecture**: Seq2Seq (LSTM encoder-decoder)  
 - **Attention**: Luong (general scoring)  
@@ -27,30 +23,14 @@ This repository contains a PyTorch implementation of a **Sequence-to-Sequence mo
 - **Evaluation**: BLEU score on 100 validation samples  
 - **Decoding**: Beam Search (`beam_width=5`)
 
----
-
-## 📊 Results
+## Results
 
 | Metric        | Score     |
 |---------------|-----------|
-| BLEU (val set) | **0.63** |
+| BLEU (val set) | 0.63 |
 | Best Epoch     | ~5 (early stopping monitored on val loss) |
 
-### 🔍 Sample Translations:
-```
-EN: Hello, how are you?
-IT: in mare che avete visto
-
-EN: I love machine learning.
-IT: io sono agitato
-
-EN: This book is very interesting.
-IT: tutti sono impedito
-```
-
----
-
-## 📦 Requirements
+## Requirements
 
 - Python ≥ 3.8  
 - PyTorch ≥ 1.11  
@@ -62,9 +42,7 @@ Install with:
 pip install torch datasets nltk tqdm scikit-learn
 ```
 
----
-
-## 🚀 Training
+## Training
 
 To train the model:
 ```python
@@ -77,9 +55,7 @@ The notebook includes:
 - Validation loss tracking  
 - Early stopping and checkpointing
 
----
-
-## 📈 Evaluation
+## Evaluation
 
 After training, the model is evaluated using:
 - Token-level accuracy (excluding `<PAD>`)
@@ -90,18 +66,3 @@ After training, the model is evaluated using:
 bleu_score = compute_bleu(model, val_loader, ...)
 print(f"BLEU: {bleu_score * 100:.2f}")
 ```
-
----
-
-## 🔮 Future Work
-
-- Use pretrained embeddings (e.g., GloVe, fastText)  
-- Add positional encoding or Transformer decoder  
-- Improve generalization with regularization  
-- Evaluate on full test set and larger corpora
-
----
-
-## 📝 License
-
-This project is provided for educational purposes only.
